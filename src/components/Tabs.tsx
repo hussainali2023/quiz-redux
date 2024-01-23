@@ -10,6 +10,7 @@ import {
   Square3Stack3DIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/solid";
+import { QuizCard } from "./QuizCard";
  
 export function TabsWithIcon() {
   const data = [
@@ -17,9 +18,7 @@ export function TabsWithIcon() {
       label: "Quiz List",
       value: "Quiz List",
       icon: Square3Stack3DIcon,
-      desc: `It really matters and then like it really doesn't matter.
-      What matters is the people who are sparked by it. And the people
-      who are like offended by it, it doesn't matter.`,
+      desc: <QuizCard>Hello world</QuizCard>,
     },
     {
       label: "Add Quiz",
