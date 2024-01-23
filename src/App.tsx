@@ -1,14 +1,12 @@
-import { useState } from 'react'
-import { Button } from '@material-tailwind/react'
+import { Button } from "@material-tailwind/react";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-   <>
-   <Button title='none' placeholder="enter your name" color='red'></Button>
-   </>
-  )
+    <>
+      <Button placeholder="click">Click here</Button>
+    </>
+  );
 }
 
-export default App
+export default App;
