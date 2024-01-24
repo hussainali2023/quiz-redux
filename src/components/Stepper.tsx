@@ -1,8 +1,19 @@
 import React from "react";
 import { Stepper, Step, Button } from "@material-tailwind/react";
- 
-export function QuizStepper() {
-  const [activeStep, setActiveStep] = React.useState(0);
+import { useAppDispatch, useAppSelector } from "../redux/hook";
+import { setActiveStepper } from "../redux/features/stepper/stepperSlice";
+
+type TStepperProps = {
+  steps: {
+    value: Number,
+    name:String,
+    component: React.ReactNode
+  }[]
+}
+
+export function QuizStepper({steps}: TStepperProps) {
+ const {activeStep} = useAppSelector((state) => state.stepper)
+ const dispatch = useAppDispatch()
  
  
   return (
@@ -10,10 +21,19 @@ export function QuizStepper() {
       <Stepper placeholder={""}
         activeStep={activeStep}
       >
-        <Step placeholder={""} onClick={() => setActiveStep(0)} className=" w-fit px-8">Quiz List</Step>
-        <Step placeholder={""} onClick={() => setActiveStep(1)} className=" w-fit px-8">Add Quiz</Step>
-        
+        {/* <Step placeholder={""} onClick={() => dispatch(setActiveStepper(0))} className=" w-fit px-8">Quiz List</Step>
+        <Step placeholder={""} onClick={() => dispatch(setActiveStepper(1))} className=" w-fit px-8">Add Quiz</Step>
+         */}
+{
+  steps.map((step) => (
+    <Step placeholder={""} onClick={() => dispatch(setActiveStepper(step.value))} className=" w-fit px-8">{step.name}</Step>
+  ) )
+}
+
       </Stepper>
+      <div>
+       
+      </div>
     </div>
   );
 }
