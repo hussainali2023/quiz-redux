@@ -11,6 +11,7 @@ import {
   UserCircleIcon,
 } from "@heroicons/react/24/solid";
 import { QuizCard } from "./QuizCard";
+import {AddQuiz} from "./AddQuiz"
  
 export function TabsWithIcon() {
   const data = [
@@ -24,8 +25,7 @@ export function TabsWithIcon() {
       label: "Add Quiz",
       value: "Add Quiz",
       icon: UserCircleIcon,
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
+      desc:<AddQuiz/>
     },
   ];
   return (
