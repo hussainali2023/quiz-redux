@@ -117,7 +117,7 @@ import {
            </div>
           </div>
           <Button placeholder={""} className="mt-6" fullWidth>
-            sign up
+            Add Quiz
           </Button>
         </form>
       </Card>
