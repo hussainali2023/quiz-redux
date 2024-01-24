@@ -1,24 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
-type TQiz =
+type TQuiz =
  {
-        module:"",
-        question:"",
-        description:"",
-        options: [],
-        correctOptions: []
+        module:" ",
+        question:" ",
+        description:" ",
+        options: [ ],
+        correctOptions: [ ]
     }
 
 
 type TInitialState = {
-    quiz: TQiz[]
+    quiz: TQuiz[]
 }
 
 type TAction = {
-    payload:TQiz[];
+    payload:TQuiz[];
 }
 
-const initialState = {
+const initialState: TInitialState = {
     quiz:[] 
 
 }
@@ -27,7 +27,7 @@ const quizSlice = createSlice({
     name:"quiz",
     initialState,
     reducers:{
-        addQuiz: (state, action:TAction) => {
+        addQuiz: (state, action: TAction) => {
             state.quiz.push(action.payload)
         }
     }
